@@ -89,6 +89,12 @@ const clearCanvas = () => {
     );
 }
 
+const moveButton = document.querySelectorAll('.command');
+const btnClick = e => {
+    draw({ key: e.target.dataset.command });
+} 
+moveButton.forEach(button => button.addEventListener('click', btnClick));
+
 //listen for the arrow keys
 window.addEventListener('keydown', handleKey);
 shakeBtn.addEventListener('click', clearCanvas);
